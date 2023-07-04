@@ -12,7 +12,6 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AddressResponseDto {
-    @Id
     private String id;
     private String country;
     private String city;

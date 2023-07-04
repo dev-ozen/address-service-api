@@ -14,7 +14,6 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AddressRequestDto {
-    @Id
     private String id;
     private String country;
     private String city;

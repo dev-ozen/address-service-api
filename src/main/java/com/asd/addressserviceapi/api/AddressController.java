@@ -1,6 +1,7 @@
 package com.asd.addressserviceapi.api;
 
 import com.asd.addressserviceapi.dto.request.AddressRequestDto;
+import com.asd.addressserviceapi.dto.response.AddressResponseDto;
 import com.asd.addressserviceapi.service.AddressService;
 import com.asd.addressserviceapi.util.StandardResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,9 +31,11 @@ public class AddressController {
 
     @GetMapping("/{id}")
     public ResponseEntity<StandardResponseEntity> findUser(@PathVariable String id) {
+        AddressResponseDto address = addressService.findAddress(id);
+        System.out.println(address.getCity());
         return new ResponseEntity<>(
                 new StandardResponseEntity(200, "data for " + id,
-                        addressService.findAddress(id)),
+                       address),
                 HttpStatus.OK
         );
     }
